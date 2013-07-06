@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1 = title
+  div.newbook
+    form( method="post" )
+      div
+        div
+          span.label Title :
+          input(type="text", name="title", id="editBookTitle")
+        div
+          span.label Author :
+          input(type="text", name="author", id="editBookAuthor")
+        div
+          span.label Date Finished :
+          input(type="date", name="date_finished", id="editDateFinished")
+        div
+          span.label Thoughts :
+          textarea(rows=4, cols = 50, name="thoughts")
+        div
+          input(type="submit", value="Save")
+    a(href="/")!= "Back to Book List"

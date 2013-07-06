@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= "Edit Book"
+  div.newbook
+    form( method="post")
+      input(name="_id", type="hidden", value = book._id.toHexString())
+      div
+        div
+          span.label Title :
+          input(type="text", name="title", id="editBookTitle")
+        div
+          span.label Author :
+          input(type="text", name="author", id="editBookAuthor")
+        div
+          span.label Date Finished :
+          input(type="date", name="date_finished", id="editDateFinished")
+        div
+          span.label Thoughts :
+          textarea(rows=4, cols = 50, name="thoughts")
+        div#editBookSubmit
+          input(type="submit", value="Update")
+    a(href="/")!= "Back to Book List"

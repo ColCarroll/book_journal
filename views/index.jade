@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  #books
+  - each book in books
+    div.book
+      div.title= book.title
+      div.author= book.author
+      div.date_finished= book.date_finished
+      div.thoughts= book.thoughts
+      form( method="post", action="/book/:id/delete")
+        input(name="_id", type = "hidden", value=book._id.toHexString())
+        input(id="delete", value="X", type="submit")
+      form( method="get", action="/book/:id/edit")
+        input(name="_id", type = "hidden", value=book._id.toHexString())
+        input(id="edit", value="Edit", type="submit")
+  a(href="/book/new")!= "Add New Book"
