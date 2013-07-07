@@ -52,7 +52,9 @@ app.get('/book/new', function(req, res) {
 app.post('/book/new', function(req, res) {
   bookProvider.save({
     title: req.param('title'),
-    author: req.param('author')
+    author: req.param('author'),
+    date_finished: req.param('date_finished'),
+    thoughts: req.param('thoughts')
   }, function(error, docs) {
     res.redirect('/');
   });
@@ -60,11 +62,8 @@ app.post('/book/new', function(req, res) {
 
 //update a book
 app.get('/book/:id/edit', function(req, res) {
-  bookProvider.findById(req.param('_id'), function(error, book) {
-    res.render('book_edit',
-      { title: book.title,
-        book: book
-      });
+  bookProvider.findById(req.param('_id'), function(error, a_book) {
+    res.render('book_edit', {title: "Edit Book", a_book: a_book});
   });
 });
 

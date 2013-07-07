@@ -2,22 +2,22 @@ extends layout
 
 block content
   h1= "Edit Book"
-  div.newbook
+  div.newa_book
     form( method="post")
-      input(name="_id", type="hidden", value = book._id.toHexString())
+      input(name="_id", type="hidden", value = a_book._id.toHexString())
       div
         div
           span.label Title :
-          input(type="text", name="title", id="editBookTitle")
+          input(type="text", name="title", id="editBookTitle", placeholder= a_book.title)
         div
           span.label Author :
-          input(type="text", name="author", id="editBookAuthor")
+          input(type="text", name="author", id="editBookAuthor", placeholder= a_book.author)
         div
           span.label Date Finished :
-          input(type="date", name="date_finished", id="editDateFinished")
+          input(type="date", name="date_finished", id="editDateFinished", placeholder= a_book.date_finished)
         div
           span.label Thoughts :
-          textarea(rows=4, cols = 50, name="thoughts")
+          textarea(rows=4, cols = 50, name="thoughts",placeholder= a_book.thoughts)
         div#editBookSubmit
           input(type="submit", value="Update")
     a(href="/")!= "Back to Book List"

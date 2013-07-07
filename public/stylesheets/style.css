@@ -19,34 +19,29 @@ h1 {
   text-shadow: 1px 2px 2px #ddd;
   font-size: 60px;
 }
-#employees {
+#books {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
   width: 320px;
 }
-#employees .employee {
+#books .book {
   margin: 20px;
 }
-#employees .employee .created_at {
+#books .book .created_at {
   display: none;
 }
-#employees .employee .title {
+#books .book .title {
   font-weight: bold;
   background-color: #eee;
 }
-#employees .employee .name {
+#books .book .name {
   background-color: #ffa;
 }
-#employees .employee input#delete {
-  margin-top: -17px;
-  margin-left: 255px;
+#forms {
+  text-align: left;
 }
-#employees .employee input#edit {
-  margin-top: -20px;
-  margin-left: 215px;
-}
-.newemployee {
+.newbook {
   border: 3px;
   border-color: #000;
   border-style: dotted;

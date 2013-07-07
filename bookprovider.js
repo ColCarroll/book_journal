@@ -64,7 +64,8 @@ BookProvider.prototype.findById = function(id, callback) {
     if( error ) callback(error);
     else {
       book_collection.findOne({
-        _id: book_collection.db.bson_serializer.ObjectID.createFromHexString(id)},
+        _id: book_collection.db.bson_serializer.ObjectID.createFromHexString(id)
+        },
         function(error, result) {
           if( error) callback(error);
           else callback(null, result);

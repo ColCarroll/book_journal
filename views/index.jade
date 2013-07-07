@@ -5,14 +5,19 @@ block content
   #books
   - each book in books
     div.book
-      div.title= book.title
-      div.author= book.author
-      div.date_finished= book.date_finished
-      div.thoughts= book.thoughts
-      form( method="post", action="/book/:id/delete")
-        input(name="_id", type = "hidden", value=book._id.toHexString())
-        input(id="delete", value="X", type="submit")
-      form( method="get", action="/book/:id/edit")
-        input(name="_id", type = "hidden", value=book._id.toHexString())
-        input(id="edit", value="Edit", type="submit")
+      p.
+        <span id="title"><u>#{book.title}</u></span>, by
+        <span id="author">#{book.author}</span>
+      p
+        <span class="category_name">Date Finished</span>: <span id=date_finished>#{book.date_finished}</span>
+      p
+        <span class="category_name">Thoughts</span>:<br><span id=thoughts>#{book.thoughts}</span>
+      div.forms
+        form( method="post", action="/book/:id/delete",onsubmit='return confirm("Do you really want to delete?");')
+          input(name="_id", type = "hidden", value=book._id.toHexString())
+          input(id="delete", value="X", type="submit")
+        form( method="get", action="/book/:id/edit")
+          input(name="_id", type = "hidden", value=book._id.toHexString())
+          input(id="edit", value="Edit", type="submit")
+
   a(href="/book/new")!= "Add New Book"
