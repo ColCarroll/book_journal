@@ -8,16 +8,17 @@ block content
       div
         div
           span.label Title :
-          input(type="text", name="title", id="editBookTitle", placeholder= a_book.title)
+          input(type="text", name="title", id="editBookTitle", value= a_book.title)
         div
           span.label Author :
-          input(type="text", name="author", id="editBookAuthor", placeholder= a_book.author)
+          input(type="text", name="author", id="editBookAuthor", value= a_book.author)
         div
           span.label Date Finished :
-          input(type="date", name="date_finished", id="editDateFinished", placeholder= a_book.date_finished)
+          input(type="date", name="date_finished", id="editDateFinished", value= a_book.date_finished)
         div
           span.label Thoughts :
-          textarea(rows=4, cols = 50, name="thoughts",placeholder= a_book.thoughts)
+          textarea(rows=4, cols = 50, name="thoughts")
+            | #{a_book.thoughts}
         div#editBookSubmit
           input(type="submit", value="Update")
     a(href="/")!= "Back to Book List"
